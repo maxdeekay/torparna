@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/data.js" defer></script>
     <title>Torparna</title>
 </head>
 <body>
@@ -28,43 +30,55 @@
         <img id="house-image" src="images/background-image.jpg">
     </div>
 
-    <div id="articles">
+    <div id="articles" class="scroll">
         <h2>Artiklar</h2>
-        <div>
+        <div data-id="ljusstakar" class="item">
             <img src="images/ljusstakar.jpg">
         </div>
-        <div>
+        <div data-id="klockor" class="item">
             <img src="images/klockor.jpg">
         </div>
-        <div>
+        <div data-id="porslinsfigur" class="item">
             <img src="images/porslinsfigur.jpg">
         </div>
-        <div>
+        <div data-id="flygplan" class="item">
             <img src="images/flygplan1.jpg">
         </div>
-        <div>
+        <div data-id="skridskor" class="item">
             <img src="images/skridskor1.jpg">
         </div>
-        <div>
+        <div data-id="tandstickor" class="item">
             <img src="images/tandstickor1.jpg">
         </div>
-        <div>
+        <div data-id="kamera" class="item">
             <img src="images/kamera1.jpg">
         </div>
-        <div>
+        <div data-id="nutandbolt" class="item">
             <img src="images/nutandbolt.jpg">
         </div>
-        <div>
+        <div data-id="strykjarn" class="item">
             <img src="images/strykjarn.jpg">
         </div>
     </div>
 
-    <div id="about">
+    <div id="about" class="scroll">
         <h2>Om oss</h2>
     </div>
 
-    <div id="inspiration">
+    <div id="inspiration" class="scroll">
         <h2>Inspiration</h2>
+    </div>
+</div>
+
+<div id="inspect-wrapper">
+    <div id="inspect-container">
+        <img id="inspect-image" src="#">
+        <p id="price"></p>
+        <button id="add-to-cart">
+            <img src="images/kundvagn-small.png">
+            Köp
+        </button>
+        <p id="description"></p>
     </div>
 </div>
 
