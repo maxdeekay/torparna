@@ -29,7 +29,7 @@ header {
 
 header>div {
     margin: 0 auto;
-    width: 50%;
+    max-width: 80em;
     height: 100%;
     color: #401921;
     display: flex;
@@ -48,7 +48,7 @@ nav>ul {
 
 nav>ul>li {
     display: inline;
-    padding: 1vw;
+    padding: 8px;
 }
 
 nav>ul>li:hover {
@@ -64,21 +64,17 @@ nav>ul>li:hover {
     grid-template: repeat(3, auto) / 1fr;
 }
 
-#house-image {
-    
-    width: 100%;
-    object-fit: cover;
-    border-bottom: 1px solid black;
+#house-parent {
+    height: 34vw;
+    clip-path: inset(0);
 }
 
-#slogan {
-    font-size: 4rem;
-    font-weight: bold;
-    color: white;
-    position: absolute;
-    top: 24%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#house-image {
+    position: fixed;
+    object-fit: cover;
+    width: 100%;
+    border-bottom: 1px solid black;
+    z-index: -1;
 }
 
 #articles {
@@ -125,4 +121,10 @@ footer>div {
 
 footer ul {
     list-style-type: none;
+}
+
+@media (width <= 600px) {
+    header>div {
+        justify-content: space-between;
+    }
 }
