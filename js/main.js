@@ -15,6 +15,15 @@ function init() {
     updateShoppingCart();
 }
 
+inspectBox.addEventListener("click", function(e) {
+    if (e.target !== this){
+        return;
+    } else {
+        inspectBox.style.display = "none";
+        document.body.classList.remove("disable-scroll");
+    }
+});
+
 Array.from(itemElements).forEach(element => element.addEventListener("click", inspectItem));
 
 function inspectItem(event) {
@@ -30,19 +39,11 @@ function inspectItem(event) {
     priceElement.innerHTML = item.price;
     descriptionElement.innerHTML = item.text;
     inspectBox.style.display = "block";
+    document.body.classList.add("disable-scroll");
 
     ATCElement.addEventListener("click", function() {
         addToCart(itemID);
     });
-
-/*     window.addEventListener("click", function(e) {
-        if (inspectBox.contains(e.target)) {
-            console.log("Clicked in inspectBox");
-        } else {
-            inspectBox.style.display = "none";
-            console.log("Clicked outside of inspectBox")
-        }
-    }); */
 }
 
 function updateShoppingCart() {
