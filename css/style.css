@@ -56,7 +56,24 @@ nav>ul>li:hover {
 }
 
 #shopping-cart {
+    position: relative;
+}
+
+#shopping-cart>a>img {
     width: 2.5em;
+}
+
+#shopping-cart>span {
+    display: none;
+    background-color: white;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 1em;
+    text-align: center;
+    color: rgb(211, 71, 71);
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 #grid-container {
