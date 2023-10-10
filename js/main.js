@@ -9,41 +9,49 @@ const descriptionElement = document.getElementById("description");
 const scAmountElement = document.getElementById("shopping-cart-amount");
 const ATCElement = document.getElementById("add-to-cart");
 
-window.onload = init;
-
-function init() {
+window.onload = () => {
     updateShoppingCart();
+    
+    data.forEach(addItem);
+
+    inspectBox.addEventListener("click", function(e) {
+        if (e.target !== inspectBox){
+            return;
+        } else {
+            inspectBox.style.display = "none";
+            document.body.classList.remove("disable-scroll");
+        }
+    });
+
+    ATCElement.addEventListener("click", function() {
+        addToCart(itemID);
+    });
+};
+
+function addItem(item) {
+    const element = document.createElement("div");
+    element.setAttribute("data-id", item.id);
+    element.classList.add("item");
+    element.onclick = () => inspectItem(item);
+    element.appendChild(document.createElement("img")).src = item.image;
+    document.getElementById("articles").appendChild(element);
 }
 
-inspectBox.addEventListener("click", function(e) {
-    if (e.target !== this){
-        return;
-    } else {
-        inspectBox.style.display = "none";
-        document.body.classList.remove("disable-scroll");
-    }
-});
-
-Array.from(itemElements).forEach(element => element.addEventListener("click", inspectItem));
-
-function inspectItem(event) {
-    let itemID = event.target.parentElement.getAttribute("data-id");
-    let item = data.find(d => d.id === itemID);
-
-    if (item === undefined) {
-        console.log("Invalid itemID: ", itemID);
-        return;
-    }
-
+function inspectItem(item) {
     inspectImage.src = item.image;
     priceElement.innerHTML = item.price;
     descriptionElement.innerHTML = item.text;
     inspectBox.style.display = "block";
     document.body.classList.add("disable-scroll");
 
-    ATCElement.addEventListener("click", function() {
-        addToCart(itemID);
-    });
+    const clearEventListeners = (id) => {
+        const oldElement = document.getElementById(id);
+        const newElement = oldElement.cloneNode(true);
+        oldElement.parentNode.replaceChild(newElement, oldElement);
+        return newElement;
+    }
+
+    clearEventListeners("add-to-cart").onclick = () => addToCart(item);
 }
 
 function updateShoppingCart() {
@@ -57,9 +65,9 @@ function updateShoppingCart() {
     }
 }
 
-function addToCart(itemID) {
+function addToCart(item) {
     let cart = JSON.parse(localStorage.getItem("cart")??"[]");
-    cart.push(itemID);
+    cart.push(item.id);
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
