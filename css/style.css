@@ -201,10 +201,19 @@ nav>ul>li:hover {
 .section>div {
     margin: 0 auto;
     max-width: 50em;
+    padding: 1em 0 1em 0;
+}
+
+#about>div {
     display: grid;
     grid-template: 1fr / 1fr 1fr;
     column-gap: 1em;
-    padding: 1em 0 1em 0;
+}
+
+#contact>div {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    justify-items: center;
 }
 
 #about {
