@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <script src="js/checkout.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <title>Torparna</title>
+</head>
+<body>
+    <div id="checkout">
+        <a href="index.html" id="checkout-back">&larr; Tillbaka</a>
+        <h2>Kundvagn</h2>
+        <section id="checkout-items">
+            <div id="checkout-titles">
+                <h3>Produkt</h3>
+                <h3>Antal</h3>
+                <h3>Pris</h3>
+            </div>
+        </section>
+
+       <section>
+            <h3 id="leveransuppgifter">Leveransuppgifter</h3>
+
+            <form onsubmit="alert('OBS. DETTA ÄR INGEN RIKTIG WEBBSHOP');" method="POST">
+                <div class="full-input">
+                    <label for="email">E-post</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                
+                <div class="full-input">
+                    <label for="tele">Telefonnummer</label>
+                    <input type="text" id="tele" name="tele" required>
+                </div>
+
+                <div class="full-input">
+                    <label for="personnr">Personnummer</label>
+                    <input type="text" id="personnr" name="personnr" required>
+                </div>
+
+                <div class="full-input-wrapper">
+                    <div class="full-input short-input">
+                        <label for="fname">Förnamn</label>
+                        <input type="text" id="fname" name="fname" required>
+                    </div>
+         
+                    <div class="full-input long-input">
+                        <label for="lname">Efternamn</label>
+                        <input type="text" id="lname" name="lname" required>
+                    </div>
+                </div>
+
+                <div class="full-input">
+                    <label for="adress">Adress</label>
+                    <input type="text" id="adress" name="adress" required>
+                </div>
+
+                <div class="full-input-wrapper">
+                    <div class="full-input short-input">
+                        <label for="postnr">Postnummer</label>
+                        <input type="text" id="postnr" name="postnr" required>
+                    </div>
+        
+                    <div class="full-input long-input">
+                        <label for="postort">Postort</label>
+                        <input type="text" id="postort" name="postort" required>
+                    </div>   
+                </div>
+
+                <input type="submit" value="Nästa">
+            </form>
+       </section> 
+       
+       <div class="temp">
+            <a href="#">Återbetalningspolicy</a>
+            <a href="#">Fraktpolicy</a>
+            <a href="#">Integritetspolicy</a>
+            <a href="#">Användarvillkor</a>    
+       </div>
+    </div>
+</body>
+</html>

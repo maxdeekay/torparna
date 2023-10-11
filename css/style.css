@@ -75,6 +75,7 @@ nav>ul>li:hover {
     position: absolute;
     right: 0;
     bottom: 0;
+    pointer-events: none;
 }
 
 #grid-container {
@@ -94,10 +95,6 @@ nav>ul>li:hover {
     z-index: -1;
 }
 
-#budapest-image {
-    width: 100%;
-}
-
 #articles {
     max-width: 50em;
     margin: 0 auto;
@@ -105,6 +102,7 @@ nav>ul>li:hover {
     display: grid;
     grid-template: auto repeat(3, 1fr) / repeat(3, 1fr);
     gap: 1em;
+    padding-bottom: 5em;
 }
 
 #articles>h2 {
@@ -208,6 +206,8 @@ nav>ul>li:hover {
     display: grid;
     grid-template: 1fr / 1fr 1fr;
     column-gap: 1em;
+    background-color: rgba(0,0,0,0.5);
+    padding: 1em;
 }
 
 #contact>div {
@@ -217,9 +217,15 @@ nav>ul>li:hover {
 }
 
 #about {
-    background-color: #401921;
+    background: url("../images/vass.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
     color: white;
-    margin-top: 0.5em;
+    padding: 10em;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
 }
 
 #about iframe {
@@ -228,15 +234,19 @@ nav>ul>li:hover {
     height: 100%;
 }
 
+#contact {
+    padding: 1em;
+}
+
 #contact-info {
     text-align: left;
 }
 
-form label {
+#contact form label {
     font-size: 1.2rem;
 }
 
-form input[type=text] {
+#contact form input[type=text] {
     font-size: 1.2rem;
     background-color: rgb(240,240,240);
     outline: none;
@@ -246,7 +256,7 @@ form input[type=text] {
     border-color: lightgrey;
 }
 
-form textarea {
+#contact form textarea {
     font-size: 1.2rem;
     width: 20rem;
     height: 10rem;
@@ -257,11 +267,11 @@ form textarea {
     resize: none;
 }
 
-form input[type=text]:hover, form input[type=text]:focus,form textarea:hover, form textarea:focus {
+#contact form input[type=text]:hover, form input[type=text]:focus,form textarea:hover, form textarea:focus {
     border-color: black;
 }
 
-form input[type=submit] {
+#contact form input[type=submit] {
     height: 3rem;
     width: 20rem;
     border: 3px solid black;
@@ -270,7 +280,7 @@ form input[type=submit] {
     transition: background-color 0.3s;
 }
 
-form input[type=submit]:hover {
+#contact form input[type=submit]:hover {
     background-color: black;
     color: rgb(240,240,240);
     cursor: pointer;

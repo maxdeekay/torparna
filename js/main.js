@@ -39,7 +39,7 @@ function addItem(item) {
 
 function inspectItem(item) {
     inspectImage.src = item.image;
-    priceElement.innerHTML = item.price;
+    priceElement.innerHTML = item.price + " kr";
     descriptionElement.innerHTML = item.text;
     inspectBox.style.display = "block";
     document.body.classList.add("disable-scroll");

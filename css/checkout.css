@@ -1,0 +1,146 @@
+body {
+    margin-top: 1em;
+}
+
+#checkout {
+    margin: 0 auto;
+    height: 500px;
+    width: 500px;
+}
+
+#checkout h2 {
+    margin-top: 0.2em;
+    margin-bottom: 1em;
+}
+
+#leveransuppgifter {
+    margin-bottom: 1em;
+}
+
+#checkout>section>form>div {
+    margin-bottom: 1em;
+}
+
+#checkout input[type=text] {
+    width: 100%;
+}
+
+#checkout input[type=text] {
+    outline: none;
+    border: none;
+    background-color: rgb(240,240,240);
+    font-size: 1rem;
+}
+
+#checkout label {
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.full-input {
+    border: 1px solid lightgrey;
+    border-radius: 0.5em;
+    padding: 2px 5px 5px 8px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.short-input {
+    width: 40%;
+}
+
+.long-input {
+    width: 60%;
+}
+
+.full-input-wrapper {
+    display: flex;
+    gap: 0.5em;
+}
+
+#checkout-titles {
+    display: flex;
+    justify-content: space-between;
+}
+
+#checkout-items {
+    margin-bottom: 1em;
+}
+
+.checkout-item {
+    width: 100%;
+    padding: 5px 0 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#checkout-items .checkout-item {
+    border-bottom: 1px solid lightgrey;
+}
+
+#checkout-items .checkout-item:last-child {
+    border-bottom: none;
+}
+
+.checkout-item img {
+    width: 15%;
+    border: 1px solid grey;
+}
+
+#sum-amount {
+    text-align: right;
+    margin-top: 5px;
+}
+
+#checkout input[type=submit] {
+    display: block;
+    margin: auto 0 auto auto;
+    width: 15em;
+    height: 2.5em;
+    border: 1px solid lightgrey;
+    border-radius: 0.5em;
+    background-color: lightgrey;
+    transition: background-color 0.3s;
+}
+
+#checkout input[type=submit]:hover {
+    cursor: pointer;
+    background-color: rgb(202, 108, 108);
+}
+
+#checkout form:valid input[type=submit] {
+    background-color: rgb(117, 255, 117);
+}
+
+#checkout form:valid input[type=submit]:hover {
+    background-color: rgb(191, 255, 191);
+}
+
+#checkout .temp {
+    border-top: 1px solid lightgrey;
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+#checkout>.temp>a {
+    text-decoration: none;
+    margin: 0.5em 0 5em 0;
+    color: rgb(69, 69, 255);
+}
+
+#checkout-items span {
+    min-width: 5em;
+    text-align: right;
+}
+
+#checkout-back {
+    color: black;
+    text-decoration: none;
+}
+
+#checkout-back:hover {
+    text-decoration: underline;
+}
