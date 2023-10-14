@@ -22,7 +22,7 @@ header {
     height: 5em;
     top: 0;
     left: 0;
-    width: 100%;
+    min-width: 100vw;
     z-index: 1;
     border-bottom: 1px solid grey;
 }
@@ -81,6 +81,7 @@ nav>ul>li:hover {
 #grid-container {
     display: grid;
     grid-template: repeat(3, auto) / 1fr;
+    overflow-x: hidden;
 }
 
 #house-parent {
@@ -91,7 +92,7 @@ nav>ul>li:hover {
 #house-image {
     position: fixed;
     object-fit: cover;
-    width: 100%;
+    width: 100vw;
     z-index: -1;
 }
 
@@ -149,7 +150,7 @@ nav>ul>li:hover {
 }
 
 #inspect-image {
-    width: 30em;
+    width: 100%;
     border-radius: 1em;
     grid-column: span 2;
     justify-self: center;
@@ -223,7 +224,7 @@ nav>ul>li:hover {
     background-position: center;
     background-size: cover;
     color: white;
-    padding: 10em;
+    padding: 15em 0 15em 0;
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
 }
@@ -235,7 +236,7 @@ nav>ul>li:hover {
 }
 
 #contact {
-    padding: 1em;
+    padding: 2em;
 }
 
 #contact-info {
@@ -287,7 +288,7 @@ nav>ul>li:hover {
 }
 
 footer {
-    background-color: #404637;
+    background-color: #401921;
     color: white;
     width: 100%;
     height: 20em;
@@ -311,10 +312,109 @@ footer ul {
 .disable-scroll {
     height: 100%;
     overflow: hidden;
+    margin-right: 1em;
 }
 
+/* Mindre skärmar */
+@media (width <= 992px) {
+    #articles {
+        grid-template: auto repeat(5, 1fr) / 1fr 1fr;
+        width: 95vw;
+        gap: 0.5;
+    }
+
+    #articles>h2 {
+        grid-column: span 2;
+    }
+}
+
+/* Mobiltelefoner */
 @media (width <= 600px) {
-    header>div {
+  /*   header>div {
         justify-content: space-between;
+    } */
+
+    #articles {
+        grid-template: auto repeat(9, 1fr) / 1fr;
+        min-width: 98vw;
+    }
+
+    #articles>h2 {
+        grid-column: span 1;
+    }
+
+    #about>div {
+        grid-template: 1fr 1fr / 1fr;
+        width: 95vw;
+    }
+
+    #about-text {
+        margin-top: 0.5em;
+    }
+
+    #about {
+        background: url("../images/vass.jpg");
+        background-repeat: no-repeat;
+        background-attachment: relative;
+        background-position: center;
+        background-size: cover;
+        color: white;
+        padding: 5em 0 5em 0;
+    }
+
+    #contact>div {
+        grid-template: auto 1fr / 1fr;
+    }
+
+    nav>ul>li {
+        display: block;
+        padding: 1px;
+    }
+
+    #house-parent {
+        display: none;
+    }
+
+    footer {
+        background-color: #401921;
+        color: white;
+        min-width: 100vw;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    footer>div {
+        padding: 1em;
+    }
+    
+    footer>div:nth-child(3) {
+        margin-bottom: 3em;
+    }    
+}
+
+@media (width <= 500px) {
+    #inspect-container {
+        grid-template: auto auto auto/ 50vw 50vw;
+        margin: 0;
+        top: 0;
+        left: 0;
+    }
+
+    #contact>div {
+        justify-items: left;
+    }
+
+    #contact form input[type=text], #contact form textarea, #contact form input[type=submit]  {
+        width: 95vw;
+    }
+
+    #contact-info {
+        margin-bottom: 2em;
+    }
+
+    #contact form {
+        border-top: 2px solid black;
+        padding-top: 2em;
     }
 }
