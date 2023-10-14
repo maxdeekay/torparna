@@ -409,6 +409,11 @@ footer ul {
         width: 95vw;
     }
 
+    #contact {
+        padding: 0;
+        margin: 0 auto;
+    }
+
     #contact-info {
         margin-bottom: 2em;
     }
