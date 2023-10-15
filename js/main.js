@@ -5,6 +5,7 @@ const inspectBox = document.getElementById("inspect-wrapper");
 const inspectImage = document.getElementById("inspect-image");
 const priceElement = document.getElementById("price");
 const descriptionElement = document.getElementById("description");
+const headerElement = document.querySelector("header");
 
 const scAmountElement = document.getElementById("shopping-cart-amount");
 const ATCElement = document.getElementById("add-to-cart");
@@ -20,6 +21,7 @@ window.onload = () => {
         } else {
             inspectBox.style.display = "none";
             document.body.classList.remove("disable-scroll");
+            headerElement.classList.remove("push-left");
         }
     });
 
@@ -43,6 +45,7 @@ function inspectItem(item) {
     descriptionElement.innerHTML = item.text;
     inspectBox.style.display = "block";
     document.body.classList.add("disable-scroll");
+    headerElement.classList.add("push-left");
 
     const clearEventListeners = (id) => {
         const oldElement = document.getElementById(id);

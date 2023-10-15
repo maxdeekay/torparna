@@ -28,7 +28,7 @@ function loadCheckoutItems() {
         
         const element = document.createElement("div");
         element.classList.add("checkout-item");
-        element.appendChild(document.createElement("img")).src = item.image;
+        element.appendChild(document.createElement("img")).src = item.imageSMALL;
         element.appendChild(document.createElement("span")).innerHTML = amount;
         element.appendChild(document.createElement("span")).innerHTML = item.price * amount + " kr";
         checkoutElement.appendChild(element);
