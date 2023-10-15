@@ -319,6 +319,24 @@ footer ul {
     padding-right: 1em;
 }
 
+#exit-inspect {
+    display: none;
+    position: absolute;
+    background-color: #401921;
+    color: white;
+    cursor: pointer;
+    border-radius: 0.3em;
+    width: 5.5em;
+    height: 2.2em;
+    line-height: 2.2em;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+#exit-inspect:hover {
+    background-color: #7d3140;
+}
+
 /* Mindre skärmar */
 @media (width <= 992px) {
     #articles {
@@ -358,6 +376,7 @@ footer ul {
         color: white;
         width: 5em;
         text-align: center;
+        border-radius: 0.3em;
     }
 
     nav>ul>li {
@@ -413,7 +432,7 @@ footer ul {
     }
 
     #contact form input[type=text], #contact form textarea, #contact form input[type=submit]  {
-        width: 95vw;
+        width: 90vw;
     }
 
     #contact {
@@ -448,7 +467,11 @@ footer ul {
     
     footer>div:nth-child(3) {
         margin-bottom: 3em;
-    }    
+    }
+    
+    #exit-inspect {
+        display: block;
+    }
 }
 
 @media (width <= 500px) {
@@ -458,5 +481,9 @@ footer ul {
         top: 0;
         left: 0;
         border-radius: 0 0 0.5em 0.5em;
+    }
+
+    #exit-inspect {
+        border-radius: 0 0 0.3em 0;
     }
 }

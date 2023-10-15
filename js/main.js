@@ -8,6 +8,7 @@ const descriptionElement = document.getElementById("description");
 const headerElement = document.querySelector("header");
 
 const scAmountElement = document.getElementById("shopping-cart-amount");
+const exitElement = document.getElementById("exit-inspect");
 const ATCElement = document.getElementById("add-to-cart");
 
 window.onload = () => {
@@ -23,6 +24,12 @@ window.onload = () => {
             document.body.classList.remove("disable-scroll");
             headerElement.classList.remove("push-left");
         }
+    });
+
+    exitElement.addEventListener("click", function() {
+        inspectBox.style.display = "none";
+        document.body.classList.remove("disable-scroll");
+        headerElement.classList.remove("push-left");
     });
 
     ATCElement.addEventListener("click", function() {
