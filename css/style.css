@@ -57,9 +57,10 @@ nav>ul>li:hover {
 
 #shopping-cart {
     position: relative;
+    display: inline-block;
 }
 
-#shopping-cart>a>img {
+#shopping-cart>img {
     width: 2.5em;
 }
 
@@ -336,6 +337,26 @@ footer ul {
 #exit-inspect:hover {
     background-color: #7d3140;
 }
+
+#cart-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #401921;
+    min-width: 200px;
+    z-index: 5;
+    right: 0;
+}
+
+#cart-dropdown a {
+    display: block;
+    color: white;
+    padding: 1em 1.2em;
+    cursor: pointer;
+}
+
+#cart-dropdown a:hover { background-color: #7d3140; }
+
+#shopping-cart:hover #cart-dropdown { display: block; }
 
 /* Mindre skärmar */
 @media (width <= 992px) {

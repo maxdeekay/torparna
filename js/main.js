@@ -65,13 +65,29 @@ function inspectItem(item) {
 }
 
 function updateShoppingCart() {
+    const toSCElement = document.getElementById("to-checkout");
     let cart = JSON.parse(localStorage.getItem("cart")??"[]");
 
     if (cart.length === 0) {
+        toSCElement.setAttribute("onclick", "alert('Kundvagnen är tom!')");   
         return
     } else {
         scAmountElement.style.display = "block";
         scAmountElement.innerHTML = cart.length;
+
+        const emptySCElement = document.getElementById("empty-cart");
+
+        toSCElement.href = "checkout.html";
+        toSCElement.removeAttribute("onclick");
+
+        emptySCElement.onclick = () => {
+            scAmountElement.style.display = "none";
+            scAmountElement.innerHTML = "";
+            localStorage.removeItem("cart");
+
+            toSCElement.removeAttribute("href");
+            toSCElement.setAttribute("onclick", "alert('Kundvagnen är tom!')");  
+        };
     }
 }
 
