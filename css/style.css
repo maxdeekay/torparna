@@ -295,15 +295,18 @@ footer {
     height: 20em;
     display: flex;
     justify-content: center; 
-    padding-top: 2em;
 }
 
 footer>div {
-    padding: 3em;
+    padding: 5em 3em 0 3em;
 }
 
 footer ul {
     list-style-type: none;
+}
+
+footer a {
+    color: lightblue;
 }
 
 .scroll {
@@ -348,11 +351,13 @@ footer ul {
 }
 
 #cart-dropdown a {
-    display: block;
+    display: block !important;
     color: white;
     padding: 1em 1.2em;
     cursor: pointer;
 }
+
+.cart-dropdown-noshow { display: none; } /* ?????????????????????????? */
 
 #cart-dropdown a:hover { background-color: #7d3140; }
 
@@ -363,18 +368,22 @@ footer ul {
     #articles {
         grid-template: auto repeat(5, 1fr) / 1fr 1fr;
         width: 95vw;
-        gap: 0.5;
+        gap: 0.5em;
     }
 
     #articles>h2 {
         grid-column: span 2;
+    }
+
+    footer>div {
+        padding: 5em 1em 0 1em;
     }
 }
 
 /* Mobiltelefoner */
 @media (width <= 600px) {
     body {
-        margin-top: 0;
+        margin-top: 2.9em;
     }
 
     header>div>a {
@@ -421,7 +430,7 @@ footer ul {
     }
 
     #articles>h2 {
-        grid-column: span 1;
+        display: none;
     }
 
     #articles img {
@@ -439,8 +448,7 @@ footer ul {
 
     #about {
         background: url("../images/vass.jpg");
-        background-repeat: no-repeat;
-        background-attachment: relative;
+        background-repeat: no-repeat;    
         background-position: center;
         background-size: cover;
         color: white;
@@ -483,11 +491,7 @@ footer ul {
     }
 
     footer>div {
-        padding: 1em;
-    }
-    
-    footer>div:nth-child(3) {
-        margin-bottom: 3em;
+        padding: 1em 0 1em 1em;
     }
     
     #exit-inspect {

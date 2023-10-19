@@ -1,16 +1,16 @@
 "use strict";
 
-const checkoutElement = document.getElementById("checkout-items");
-const submitElement = document.querySelector("input[type=submit]");
-
 window.onload = () => {
     loadCheckoutItems();
 };
 
+// Laddar in, formatterar och skriver ut till DOM
 function loadCheckoutItems() {
+    const checkoutElement = document.getElementById("checkout-items");
     let cart = JSON.parse(localStorage.getItem("cart")??"[]");
     let sum = 0;
 
+    // För att slå ihop eventuella dubbletter så loopar vi igenom 'cart' och bygger ett objekt innehållande artikelnamn och antal
     const checkoutCart = cart.reduce((obj, itemID) => {
         if (obj[itemID]) {
             obj[itemID] += 1;
@@ -21,6 +21,7 @@ function loadCheckoutItems() {
         return obj;
     }, {});
 
+    // Loopar igenom objektet 'checkoutCart' och skapar ett element för varje artikelnamn
     Object.entries(checkoutCart).forEach(([id, amount]) => {
         let item = data.find(e => e.id === id);
 
@@ -34,6 +35,7 @@ function loadCheckoutItems() {
         checkoutElement.appendChild(element);
     });
 
+    // Hanterar summa
     const sumElement = document.createElement("p");
     sumElement.setAttribute("id","sum-amount");
     sumElement.innerHTML = `Summa: ${sum} kr`;

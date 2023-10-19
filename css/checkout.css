@@ -1,7 +1,6 @@
-body {
-    margin-top: 1em;
-}
+body { margin-top: 1em; }
 
+/* Main container */
 #checkout {
     margin: 0 auto;
     max-width: 30em;
@@ -12,17 +11,47 @@ body {
     margin-bottom: 1em;
 }
 
-#leveransuppgifter {
-    margin-bottom: 1em;
+/* Tillbaka-knapp top left */
+#checkout-back {
+    color: black;
+    text-decoration: none;
 }
 
-#checkout>section>form>div {
-    margin-bottom: 1em;
+#checkout-back:hover { text-decoration: underline; }
+
+/* Produkter - Bilder, pris etc */
+#checkout-titles {
+    display: flex;
+    justify-content: space-between;
 }
 
-#checkout input[type=text] {
+#checkout-items { margin-bottom: 1em; }
+
+.checkout-item {
     width: 100%;
+    padding: 5px 0 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+#checkout-items .checkout-item { border-bottom: 1px solid lightgrey; }
+#checkout-items .checkout-item:last-child { border-bottom: none; }
+
+.checkout-item img {
+    width: 15%;
+    border: 1px solid grey;
+}
+
+#sum-amount {
+    text-align: right;
+    margin-top: 5px;
+}
+
+/* Formulär för köparens information */
+#leveransuppgifter { margin-bottom: 1em; }
+#checkout>section>form>div { margin-bottom: 1em; }
+#checkout input[type=text] { width: 100%; }
 
 #checkout input[type=text] {
     outline: none;
@@ -44,52 +73,12 @@ body {
     box-sizing: border-box;
 }
 
-.short-input {
-    width: 40%;
-}
-
-.long-input {
-    width: 60%;
-}
+.short-input { width: 40%; }
+.long-input { width: 60%; }
 
 .full-input-wrapper {
     display: flex;
     gap: 0.5em;
-}
-
-#checkout-titles {
-    display: flex;
-    justify-content: space-between;
-}
-
-#checkout-items {
-    margin-bottom: 1em;
-}
-
-.checkout-item {
-    width: 100%;
-    padding: 5px 0 5px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#checkout-items .checkout-item {
-    border-bottom: 1px solid lightgrey;
-}
-
-#checkout-items .checkout-item:last-child {
-    border-bottom: none;
-}
-
-.checkout-item img {
-    width: 15%;
-    border: 1px solid grey;
-}
-
-#sum-amount {
-    text-align: right;
-    margin-top: 5px;
 }
 
 #checkout input[type=submit] {
@@ -108,14 +97,10 @@ body {
     background-color: rgb(202, 108, 108);
 }
 
-#checkout form:valid input[type=submit] {
-    background-color: rgb(117, 255, 117);
-}
+#checkout form:valid input[type=submit] { background-color: rgb(117, 255, 117); }
+#checkout form:valid input[type=submit]:hover { background-color: rgb(191, 255, 191); }
 
-#checkout form:valid input[type=submit]:hover {
-    background-color: rgb(191, 255, 191);
-}
-
+/* Footnote med länkar */
 #checkout .temp {
     border-top: 1px solid lightgrey;
     margin-top: 3em;
@@ -135,15 +120,7 @@ body {
     text-align: right;
 }
 
-#checkout-back {
-    color: black;
-    text-decoration: none;
-}
-
-#checkout-back:hover {
-    text-decoration: underline;
-}
-
+/* MEDIA QUERIES */
 @media (width <= 600px) {
     #checkout {
         max-width: 95vw;
@@ -158,7 +135,5 @@ body {
         font-size: 0.8rem;
     }
 
-    #checkout>.temp>a {
-        margin: 1em 0 0 0;
-    }
+    #checkout>.temp>a { margin: 1em 0 0 0; }
 }

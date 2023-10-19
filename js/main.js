@@ -51,8 +51,8 @@ function inspectItem(item) {
     priceElement.innerHTML = item.price + " kr";
     descriptionElement.innerHTML = item.text;
     inspectBox.style.display = "block";
-    document.body.classList.add("disable-scroll");
-    headerElement.classList.add("push-left");
+    /* document.body.classList.add("disable-scroll");
+    headerElement.classList.add("push-left"); */
 
     const clearEventListeners = (id) => {
         const oldElement = document.getElementById(id);
@@ -65,8 +65,21 @@ function inspectItem(item) {
 }
 
 function updateShoppingCart() {
+    const dropdownElement = document.getElementById("cart-dropdown");
     const toSCElement = document.getElementById("to-checkout");
+    const emptySCElement = document.getElementById("empty-cart");
+
     let cart = JSON.parse(localStorage.getItem("cart")??"[]");
+
+    emptySCElement.onclick = () => {
+        scAmountElement.style.display = "none";
+        scAmountElement.innerHTML = "";
+        localStorage.removeItem("cart");
+
+        toSCElement.removeAttribute("href");
+        toSCElement.setAttribute("onclick", "alert('Kundvagnen är tom!')");
+        /* dropdownElement.classList.add("cart-dropdown-noshow"); */
+    };
 
     if (cart.length === 0) {
         toSCElement.setAttribute("onclick", "alert('Kundvagnen är tom!')");   
@@ -75,19 +88,8 @@ function updateShoppingCart() {
         scAmountElement.style.display = "block";
         scAmountElement.innerHTML = cart.length;
 
-        const emptySCElement = document.getElementById("empty-cart");
-
         toSCElement.href = "checkout.html";
         toSCElement.removeAttribute("onclick");
-
-        emptySCElement.onclick = () => {
-            scAmountElement.style.display = "none";
-            scAmountElement.innerHTML = "";
-            localStorage.removeItem("cart");
-
-            toSCElement.removeAttribute("href");
-            toSCElement.setAttribute("onclick", "alert('Kundvagnen är tom!')");  
-        };
     }
 }
 
