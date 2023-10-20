@@ -14,8 +14,10 @@ const ATCElement = document.getElementById("add-to-cart");
 window.onload = () => {
     updateShoppingCart();
     
+    // Loopar igenom objektet data i data.js och kallar addItem() för varje som i sin tur skapar elementet
     data.forEach(addItem);
 
+    // Fångar klick i inspect-fönstret. Är dom innanför själva inspectrutan så händer ingenting, är dom utanför så döljs den
     inspectBox.addEventListener("click", function(e) {
         if (e.target !== inspectBox){
             return;
@@ -26,17 +28,15 @@ window.onload = () => {
         }
     });
 
+    // Exit Inspect-knappen som finns för mindre skärmar
     exitElement.addEventListener("click", function() {
         inspectBox.style.display = "none";
         document.body.classList.remove("disable-scroll");
         headerElement.classList.remove("push-left");
     });
-
-    ATCElement.addEventListener("click", function() {
-        addToCart(itemID);
-    });
 };
 
+// Skapar och ritar ut ett artikel-element
 function addItem(item) {
     const element = document.createElement("div");
     element.setAttribute("data-id", item.id);
@@ -46,6 +46,7 @@ function addItem(item) {
     document.getElementById("articles").appendChild(element);
 }
 
+// Hanterar inspektorn (när man klickat på en artikel)
 function inspectItem(item) {
     inspectImage.src = item.image;
     priceElement.innerHTML = item.price + " kr";
@@ -64,6 +65,7 @@ function inspectItem(item) {
     clearEventListeners("add-to-cart").onclick = () => addToCart(item);
 }
 
+// Hanterar kundvagnen uppe till höger
 function updateShoppingCart() {
     const dropdownElement = document.getElementById("cart-dropdown");
     const toSCElement = document.getElementById("to-checkout");
@@ -71,6 +73,7 @@ function updateShoppingCart() {
 
     let cart = JSON.parse(localStorage.getItem("cart")??"[]");
 
+    // 'Töm kundvagn' click event
     emptySCElement.onclick = () => {
         scAmountElement.style.display = "none";
         scAmountElement.innerHTML = "";
@@ -93,6 +96,7 @@ function updateShoppingCart() {
     }
 }
 
+// Lägger till en artikel i kundvagnen
 function addToCart(item) {
     let cart = JSON.parse(localStorage.getItem("cart")??"[]");
     cart.push(item.id);

@@ -1,5 +1,7 @@
+/* Hämtar fonten 'Gabarito' från Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;800;900&display=swap');
 
+/* Standard browserinställningar */
 * {
     margin: 0;
     padding: 0;
@@ -7,15 +9,14 @@
     font-family: 'Gabarito', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     background-color: rgb(240,240,240);
     margin-top: 5em;
 }
 
+/* Header- och menyrelaterad styling */
 header {
     background-color: rgb(240,240,240);
     position: fixed;
@@ -42,27 +43,21 @@ header a {
     text-decoration: none;
 }
 
-nav>ul {
-    list-style-type: none;
-}
+nav>ul { list-style-type: none; }
 
 nav>ul>li {
     display: inline;
     padding: 8px;
 }
 
-nav>ul>li:hover {
-    text-decoration: underline;
-}
+nav>ul>li:hover { text-decoration: underline; }
 
 #shopping-cart {
     position: relative;
     display: inline-block;
 }
 
-#shopping-cart>img {
-    width: 2.5em;
-}
+#shopping-cart>img { width: 2.5em; }
 
 #shopping-cart>span {
     display: none;
@@ -79,12 +74,34 @@ nav>ul>li:hover {
     pointer-events: none;
 }
 
+/* Styling för kundvagnens drop-down meny */
+#cart-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #401921;
+    min-width: 200px;
+    z-index: 5;
+    right: 0;
+}
+
+#cart-dropdown a {
+    display: block !important;
+    color: white;
+    padding: 1em 1.2em;
+    cursor: pointer;
+}
+
+#cart-dropdown a:hover { background-color: #7d3140; }
+#shopping-cart:hover #cart-dropdown { display: block; }
+
+/* Main grid container för hemsidans innehåll */
 #grid-container {
     display: grid;
     grid-template: repeat(3, auto) / 1fr;
     overflow-x: hidden;
 }
 
+/* Husbildssektionen med budget Parallax-effekt */
 #house-parent {
     height: 34vw;
     clip-path: inset(0);
@@ -97,6 +114,7 @@ nav>ul>li:hover {
     z-index: -1;
 }
 
+/* Styling för samtliga artiklar */
 #articles {
     max-width: 50em;
     margin: 0 auto;
@@ -121,6 +139,7 @@ nav>ul>li:hover {
     cursor: pointer;
 }
 
+/* Styling för inspect-fönstret när en artikel har klickats */
 #inspect-wrapper {
     display: none;
     position: fixed;
@@ -168,6 +187,12 @@ nav>ul>li:hover {
     font-size: 2rem;
 }
 
+#description {
+    grid-column: span 2;
+    word-wrap: break-word;
+}
+
+/* Knapp: Lägg till i kundvagn */
 #add-to-cart {
     width: 100px;
     height: 45px;
@@ -189,33 +214,39 @@ nav>ul>li:hover {
     background-color: #7d3140;
 }
 
-#add-to-cart:active {
-    background-color: rgb(73, 168, 73);
+#add-to-cart:active { background-color: rgb(73, 168, 73); }
+
+/* Exit-inspect knapp för mindre skärmstorlekar */
+#exit-inspect {
+    display: none;
+    position: absolute;
+    background-color: #401921;
+    color: white;
+    cursor: pointer;
+    border-radius: 0.3em;
+    width: 5.5em;
+    height: 2.2em;
+    line-height: 2.2em;
+    text-align: center;
+    font-size: 1.1rem;
 }
 
-#description {
-    grid-column: span 2;
-    word-wrap: break-word;
-}
+#exit-inspect:hover { background-color: #7d3140; }
 
+/* Basic styling för About & Contact */
 .section>div {
     margin: 0 auto;
     max-width: 50em;
     padding: 1em 0 1em 0;
 }
 
+/* Styling för About-sektionen */
 #about>div {
     display: grid;
     grid-template: 1fr / 1fr 1fr;
     column-gap: 1em;
     background-color: rgba(0,0,0,0.5);
     padding: 1em;
-}
-
-#contact>div {
-    display: grid;
-    grid-template: 1fr / 1fr 1fr;
-    justify-items: center;
 }
 
 #about {
@@ -236,17 +267,16 @@ nav>ul>li:hover {
     height: 100%;
 }
 
-#contact {
-    padding: 2em;
+/* Styling för Kontakt-sektionen */
+#contact>div {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    justify-items: center;
 }
 
-#contact-info {
-    text-align: left;
-}
-
-#contact form label {
-    font-size: 1.2rem;
-}
+#contact { padding: 2em; }
+#contact-info { text-align: left; }
+#contact form label { font-size: 1.2rem; }
 
 #contact form input[type=text] {
     font-size: 1.2rem;
@@ -269,9 +299,7 @@ nav>ul>li:hover {
     resize: none;
 }
 
-#contact form input[type=text]:hover, form input[type=text]:focus,form textarea:hover, form textarea:focus {
-    border-color: black;
-}
+#contact form input[type=text]:hover, form input[type=text]:focus,form textarea:hover, form textarea:focus { border-color: black; }
 
 #contact form input[type=submit] {
     height: 3rem;
@@ -288,6 +316,7 @@ nav>ul>li:hover {
     cursor: pointer;
 }
 
+/* Styling för Footer */
 footer {
     background-color: #401921;
     color: white;
@@ -297,21 +326,14 @@ footer {
     justify-content: center; 
 }
 
-footer>div {
-    padding: 5em 3em 0 3em;
-}
+footer>div { padding: 5em 3em 0 3em; }
+footer ul { list-style-type: none; }
+footer a { color: lightblue; }
 
-footer ul {
-    list-style-type: none;
-}
+.scroll { scroll-margin: 5.4em; } /* För att navigeringen ska ta hänsyn till en fixed header */
 
-footer a {
-    color: lightblue;
-}
-
-.scroll {
-    scroll-margin: 5.4em;
-}
+/* För att stänga av scroll-funktionalitet under inspektering av artikel */
+.push-left { padding-right: 1em; }
 
 .disable-scroll {
     height: 100%;
@@ -319,51 +341,7 @@ footer a {
     margin-right: 1em;
 }
 
-.push-left {
-    padding-right: 1em;
-}
-
-#exit-inspect {
-    display: none;
-    position: absolute;
-    background-color: #401921;
-    color: white;
-    cursor: pointer;
-    border-radius: 0.3em;
-    width: 5.5em;
-    height: 2.2em;
-    line-height: 2.2em;
-    text-align: center;
-    font-size: 1.1rem;
-}
-
-#exit-inspect:hover {
-    background-color: #7d3140;
-}
-
-#cart-dropdown {
-    display: none;
-    position: absolute;
-    background-color: #401921;
-    min-width: 200px;
-    z-index: 5;
-    right: 0;
-}
-
-#cart-dropdown a {
-    display: block !important;
-    color: white;
-    padding: 1em 1.2em;
-    cursor: pointer;
-}
-
-.cart-dropdown-noshow { display: none; } /* ?????????????????????????? */
-
-#cart-dropdown a:hover { background-color: #7d3140; }
-
-#shopping-cart:hover #cart-dropdown { display: block; }
-
-/* Mindre skärmar */
+/* Mindre skärmar. Arrangerar om artiklar till två per rad och klämmer ihop footern en aning */
 @media (width <= 992px) {
     #articles {
         grid-template: auto repeat(5, 1fr) / 1fr 1fr;
@@ -371,32 +349,25 @@ footer a {
         gap: 0.5em;
     }
 
-    #articles>h2 {
-        grid-column: span 2;
-    }
-
-    footer>div {
-        padding: 5em 1em 0 1em;
-    }
+    #articles>h2 { grid-column: span 2; }
+    footer>div { padding: 5em 1em 0 1em; }
 }
 
-/* Mobiltelefoner */
+/*
+Mobiltelefoner:
+Gör hela sidan mer kompakt och funktionell
+Tar bort titel och gör om navigering till tydliga knappar
+Tar bort husbilden för mobil prestanda
+Låter artikelbilderna ta upp hela skärmbredden
+Lägger till en 'Tillbaka' knapp i inspectfönstret för att underlätta mobil navigering
+Stänger av Parallax-effekten i About-sektionen för mobil prestanda och lägger texten under kartfunktionen
+Gör om Kontakt-sektionen och footern till en kolumn
+*/
 @media (width <= 600px) {
-    body {
-        margin-top: 2.9em;
-    }
-
-    header>div>a {
-        display: none;
-    }
-
-    header {
-        height: 3em;
-    }
-
-    header>div {
-        justify-content: space-between;
-    }
+    body { margin-top: 2.9em; }
+    header>div>a { display: none; }
+    header { height: 3em; }
+    header>div { justify-content: space-between; }
 
     nav>ul>li>a {
         display: inline-block;
@@ -414,37 +385,28 @@ footer a {
         margin: 0;
     }
 
-    nav>ul {
-        padding-left: 5px;
-    }
+    nav>ul { padding-left: 5px; }
+    #shopping-cart { padding-right: 5px; }
 
-    #shopping-cart {
-        padding-right: 5px;
-    }
+    #house-parent { display: none; }
+    #exit-inspect { display: block; }
 
     #articles {
-        grid-template: auto repeat(9, 1fr) / 1fr;
+        grid-template: auto repeat(8, 1fr) / 1fr;
         width: 100%;
         gap: 0;
         margin-top: 0;
     }
 
-    #articles>h2 {
-        display: none;
-    }
-
-    #articles img {
-        border-radius: 0;
-    }
+    #articles>h2 { display: none; }
+    #articles img { border-radius: 0; }
 
     #about>div {
         grid-template: 1fr 1fr / 1fr;
         width: 95vw;
     }
 
-    #about-text {
-        margin-top: 0.5em;
-    }
+    #about-text { margin-top: 0.5em; }
 
     #about {
         background: url("../images/vass.jpg");
@@ -460,26 +422,17 @@ footer a {
         justify-items: left;
     }
 
-    #contact form input[type=text], #contact form textarea, #contact form input[type=submit]  {
-        width: 90vw;
-    }
-
     #contact {
         padding: 0;
         margin: 0 auto;
     }
 
-    #contact-info {
-        margin-bottom: 2em;
-    }
+    #contact form input[type=text], #contact form textarea, #contact form input[type=submit]  { width: 90vw; }
+    #contact-info { margin-bottom: 2em; }
 
     #contact form {
         border-top: 2px solid black;
         padding-top: 2em;
-    }
-
-    #house-parent {
-        display: none;
     }
 
     footer {
@@ -490,15 +443,10 @@ footer a {
         height: auto;
     }
 
-    footer>div {
-        padding: 1em 0 1em 1em;
-    }
-    
-    #exit-inspect {
-        display: block;
-    }
+    footer>div { padding: 1em 0 1em 1em; }
 }
 
+/* För väldigt små skärmar så låter vi inspectfönstret ta upp hela skärmbredden */
 @media (width <= 500px) {
     #inspect-container {
         grid-template: auto auto auto/ 50vw 50vw;
@@ -508,7 +456,5 @@ footer a {
         border-radius: 0 0 0.5em 0.5em;
     }
 
-    #exit-inspect {
-        border-radius: 0 0 0.3em 0;
-    }
+    #exit-inspect { border-radius: 0 0 0.3em 0; }
 }

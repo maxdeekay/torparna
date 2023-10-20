@@ -1,13 +1,19 @@
 "use strict";
 
 window.onload = () => {
-    loadCheckoutItems();
+    let cart = JSON.parse(localStorage.getItem("cart")??"[]");
+
+    // Redirectar användaren till startsidan om kundvagnen är tom
+    if (cart.length > 0) {
+        loadCheckoutItems(cart);
+    } else {
+        window.location.replace("index.html");
+    }
 };
 
 // Laddar in, formatterar och skriver ut till DOM
-function loadCheckoutItems() {
+function loadCheckoutItems(cart) {
     const checkoutElement = document.getElementById("checkout-items");
-    let cart = JSON.parse(localStorage.getItem("cart")??"[]");
     let sum = 0;
 
     // För att slå ihop eventuella dubbletter så loopar vi igenom 'cart' och bygger ett objekt innehållande artikelnamn och antal
