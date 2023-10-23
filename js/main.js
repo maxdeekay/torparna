@@ -23,16 +23,12 @@ window.onload = () => {
             return;
         } else {
             inspectBox.style.display = "none";
-            document.body.classList.remove("disable-scroll");
-            headerElement.classList.remove("push-left");
         }
     });
 
     // Exit Inspect-knappen som finns för mindre skärmar
     exitElement.addEventListener("click", function() {
         inspectBox.style.display = "none";
-        document.body.classList.remove("disable-scroll");
-        headerElement.classList.remove("push-left");
     });
 };
 
@@ -52,8 +48,6 @@ function inspectItem(item) {
     priceElement.innerHTML = item.price + " kr";
     descriptionElement.innerHTML = item.text;
     inspectBox.style.display = "block";
-    /* document.body.classList.add("disable-scroll");
-    headerElement.classList.add("push-left"); */
 
     const clearEventListeners = (id) => {
         const oldElement = document.getElementById(id);
@@ -81,7 +75,6 @@ function updateShoppingCart() {
 
         toSCElement.removeAttribute("href");
         toSCElement.setAttribute("onclick", "alert('Kundvagnen är tom!')");
-        /* dropdownElement.classList.add("cart-dropdown-noshow"); */
     };
 
     if (cart.length === 0) {

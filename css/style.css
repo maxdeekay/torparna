@@ -332,15 +332,6 @@ footer a { color: lightblue; }
 
 .scroll { scroll-margin: 5.4em; } /* För att navigeringen ska ta hänsyn till en fixed header */
 
-/* För att stänga av scroll-funktionalitet under inspektering av artikel */
-.push-left { padding-right: 1em; }
-
-.disable-scroll {
-    height: 100%;
-    overflow: hidden;
-    margin-right: 1em;
-}
-
 /* Mindre skärmar. Arrangerar om artiklar till två per rad och klämmer ihop footern en aning */
 @media (width <= 992px) {
     #articles {
