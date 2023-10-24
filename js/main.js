@@ -61,7 +61,6 @@ function inspectItem(item) {
 
 // Hanterar kundvagnen uppe till höger
 function updateShoppingCart() {
-    const dropdownElement = document.getElementById("cart-dropdown");
     const toSCElement = document.getElementById("to-checkout");
     const emptySCElement = document.getElementById("empty-cart");
 
