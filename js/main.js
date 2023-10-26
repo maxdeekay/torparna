@@ -38,7 +38,9 @@ function addItem(item) {
     element.setAttribute("data-id", item.id);
     element.classList.add("item");
     element.onclick = () => inspectItem(item);
-    element.appendChild(document.createElement("img")).src = item.imageSMALL;
+    const imageElement = document.createElement("img");
+    imageElement.src = item.imageSMALL;
+    element.appendChild(imageElement).alt = "Bild på " + item.id;
     document.getElementById("articles").appendChild(element);
 }
 
